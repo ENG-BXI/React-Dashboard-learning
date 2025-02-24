@@ -1,0 +1,41 @@
+.sign-up-card {
+    box-shadow: 0 0 20px gray;
+    width: 40%;
+}
+.form-label{
+    font-weight: 600;
+}
+.form-control {
+    border-color: gray;
+}
+
+.loading {
+    border: 3px solid;
+    border-color: #d14646 #d14646 #d14646 transparent;
+    padding: 9px;
+    color: transparent;
+    display: inline-block;
+    animation: loading-animation 0.45s linear infinite;
+    -webkit-animation: loading-animation 0.45s linear infinite;
+}
+.register .loading{
+    border-color: blue blue blue transparent;
+}
+
+@keyframes loading-animation {
+    0% {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+    }
+}

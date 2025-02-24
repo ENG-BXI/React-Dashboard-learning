@@ -1,70 +1,140 @@
-# Getting Started with Create React App
+# 🛠️ React Dashboard with Laravel API
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📌 Overview
+This is a **React.js Dashboard** built using:
+- `React Router` for navigation
+- `Context API` for state management
+- `Axios` for API requests
+- **Laravel API (Backend from Najeeb's YouTube Course)**
 
-## Available Scripts
+I did not develop the backend; I used the **Laravel API** provided in the course by **Najeeb**.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 Features
+✅ User authentication (Login & Logout)  
+✅ Protected routes using `React Router`  
+✅ Context API for global state management  
+✅ Fetching & updating data using `Axios`  
+✅ Backend integration with Laravel API  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🏗️ Tech Stack
+### **Frontend (React)**
+- React.js
+- React Router
+- Context API
+- Axios
+- Bootstrap 
 
-### `npm test`
+### **Backend (Laravel)** (Not developed by me)
+- Laravel API from **Najeeb's Course** [react Course](https://www.youtube.com/watch?v=EtNyJQItRZk&list=PLpr1Lg_f0v3ojNKR4WzZ_SEXhiKBHDQmB)
+- JWT Authentication
+- Middleware protection
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📂 Project Structure
+```bash
+📦 src
+├── 📂 Auth
+│   ├── Login.jsx
+│   ├── PersistLogin.jsx
+│   ├── ProtectedRouter.jsx
+│   ├── signUp.css
+│   ├── signUp.jsx
+│
+├── 📂 Components
+│   ├── 📂 DashBoard
+│   │   ├── DashNav.jsx
+│   │   ├── DashTable.jsx
+│   │
+│   ├── 📂 SideBar
+│   │   ├── SideBar.css
+│   │   ├── SideBar.jsx
+│   │   ├── SideBarItem.jsx
+│   │
+│   ├── 📂 Forms
+│   │   ├── Header_dashboard.jsx
+│   │   ├── header.jsx
+│   │   ├── LabelAndInput.jsx
+│
+├── 📂 Context
+│   ├── SideBarActiveContext.jsx
+│   ├── UserContext.jsx
+│
+├── 📂 Layout / Dashboard
+│   ├── AddNewProduct.jsx
+│   ├── AddNewUser.jsx
+│   ├── EditUser.jsx
+│   ├── Product.jsx
+│   ├── Users.jsx
+│
+├── 📂 pages
+│   ├── About.jsx
+│   ├── Dashboard.jsx
+│   ├── Home.jsx
+│
+├── App.css
+├── App.jsx
+├── index.css
+├── index.js
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/ENG-BXI/React-Dashboard-learning
+cd my-dashboard
+```
 
-### `npm run eject`
+### 2️⃣ Install dependencies
+```bash
+npm install
+```
+### 3️⃣ Set up .env file
+```bash
+Create a .env file in the root and add:
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 4️⃣ Run the project
+```bash
+npm run dev
+```
+### 🔑 Authentication & API Integration
+Login Request
+javascript
+``` bash
+axios.post(`${import.meta.env.VITE_API_URL}/login`, { email, password }, { withCredentials: true })
+  .then(response => console.log(response.data))
+  .catch(error => console.error(error));
+```
+### Protecting Routes
+javascript
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+``` bash
+const PrivateRoute = ({ children }) => {
+  const { user } = useContext(AuthContext);
+  return user ? children : <Navigate to="/login" />;
+};
+```
+### 🛡️ Security Considerations
+JWT tokens stored in HttpOnly Cookies for security
+Protected API requests using Laravel Middleware
+Role-based access control (RBAC) (if implemented)
+📌 Backend Setup (Laravel API)
+⚠ I did not develop the backend; it was taken from Najeeb's YouTube Course.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 🤝 Credits
+Backend by: Najeeb's [YouTube Course ](https://www.youtube.com/watch?v=EtNyJQItRZk&list=PLpr1Lg_f0v3ojNKR4WzZ_SEXhiKBHDQmB)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Frontend developed by: Abdulrahman Muneer Aljeeidi
+⭐ Contributing
+Feel free to submit pull requests! 🚀
 
-## Learn More
+### 📜 License
+This project is open-source and available under the MIT License.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---

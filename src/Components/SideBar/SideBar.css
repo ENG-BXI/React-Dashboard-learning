@@ -1,0 +1,26 @@
+.side-bar{
+    width: 230px;
+}
+.side-bar-item{
+    position: relative;
+}
+.side-bar-item.active{
+    background-color: #fdb9b9;
+}
+.side-bar-item:hover:not(.active){
+    background-color: #FFDCDC;
+}
+
+.side-bar-item.active::before {
+    content: "";
+    height: 100%;
+    width: 3px;
+    position: absolute;
+    background-color: #d14646;
+    top: 0;
+    left: -1rem;
+}
+.side-bar-item:last-of-type{
+   position: fixed;
+   bottom:1rem;
+}
