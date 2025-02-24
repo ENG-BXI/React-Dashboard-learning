@@ -33,9 +33,9 @@ I did not develop the backend; I used the **Laravel API** provided in the course
 - JWT Authentication
 - Middleware protection
 
----
 
-## 📂 Project Structure
+
+### 📂 Project Structure
 ```bash
 📦 src
 ├── 📂 Auth
@@ -80,9 +80,7 @@ I did not develop the backend; I used the **Laravel API** provided in the course
 ├── App.jsx
 ├── index.css
 ├── index.js
-
----
-
+```
 
 ### 1️⃣ Clone the repository
 ```bash
